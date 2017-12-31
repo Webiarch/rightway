@@ -75,6 +75,9 @@ WSGI_APPLICATION = 'rightway_setting.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+import dj_database_url
+db_from_env = dj_database_url.config()
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -86,6 +89,7 @@ DATABASES = {
     }
 }
 
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -125,3 +129,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
