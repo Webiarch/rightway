@@ -1,0 +1,15 @@
+venv/
+
+.idea/
+
+*.pyc
+
+*/db.sqlite3
+
+db.sqlite3
+
+etc/local.env
+
+__pycache__/
+
+rightway/__pycache__/
