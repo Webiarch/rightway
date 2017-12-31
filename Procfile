@@ -1,1 +1,1 @@
-web: gunicorn biba.wsgi --log-file -
+web: gunicorn rightway_setting.wsgi --log-file -
