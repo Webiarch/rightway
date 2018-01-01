@@ -146,3 +146,19 @@ class Load(View):
 
         print("====>Load redirect APP_URL", settings.APP_URL)
         return HttpResponseRedirect(settings.APP_URL)
+
+
+class DisplayStoreUser(View):
+
+    template = "storeuser.html"
+
+    def get(self, request):
+
+        store = Store.objects.all()
+
+        user = User.objects.all()
+
+        storeuser = StoreUser.objects.all()
+
+        return render(request, self.template, locals())
+

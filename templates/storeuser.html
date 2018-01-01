@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Store Hash</th>
+            <th>Access Tocken</th>
+            <th>Scope</th>
+            <th>User ID</th>
+        </tr>
+        {% for s in store %}
+        <tr>
+            <td>{{s.id}}</td>
+            <td>{{s.store_hash}}</td>
+            <td>{{s.access_token}}</td>
+            <td>{{s.scope}}</td>
+            <td>{{s.admin_storeuser_id}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
