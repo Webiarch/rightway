@@ -6,6 +6,7 @@
 </head>
 <body>
     <table border="1">
+        <caption>Store Detail</caption>
         <tr>
             <th>ID</th>
             <th>Store Hash</th>
@@ -20,6 +21,38 @@
             <td>{{s.access_token}}</td>
             <td>{{s.scope}}</td>
             <td>{{s.admin_storeuser_id}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <table border="1">
+        <caption>Store Detail</caption>
+        <tr>
+            <th>ID</th>
+            <th>Bigcommerce_id</th>
+            <th>Email</th>
+        </tr>
+        {% for u in user %}
+        <tr>
+            <td>{{u.id}}</td>
+            <td>{{u.bc_id}}</td>
+            <td>{{u.email}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <table border="1">
+        <caption>Store and User Relationship</caption>
+        <tr>
+            <th>Store ID</th>
+            <th>User_id</th>
+            <th>Is Admin</th>
+        </tr>
+        {% for su in storeuser %}
+        <tr>
+            <td>{{su.store_id}}</td>
+            <td>{{su.user_id}}</td>
+            <td>{{su.admin}}</td>
         </tr>
         {% endfor %}
     </table>
