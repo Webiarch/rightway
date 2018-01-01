@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^bigcommerce/callback', views.AuthCallback.as_view(), name='authcallback'),
     url(r'^bigcommerce/load', views.Load.as_view(), name='load'),
     url(r'^', views.Display.as_view(), name='display'),
-    url(r'store', views.DisplayStoreUser.as_view(), name='store'),
+    url(r'^store', views.DisplayStoreUser.as_view(), name='store'),
 ]
