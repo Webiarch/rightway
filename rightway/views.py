@@ -152,6 +152,7 @@ class DisplayStoreUser(View):
 
     template = "storeuser.html"
 
+    @xframe_options_exempt
     def get(self, request):
 
         store = Store.objects.all()
